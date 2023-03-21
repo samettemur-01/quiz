@@ -36,6 +36,9 @@ function sorugoster(secilensoru){
     dogruCevap=bilgiler.cevap;
     console.log(dogruCevap);
     
+    const foto = document.getElementById(secilensoru);
+    foto.style.border = "";
+
     document.getElementById("seceneklerListesi").innerHTML = "";
     document.getElementById("soruBaslik").textContent = soru;
 
@@ -60,14 +63,24 @@ function cevabiKontrolEt(){
     kullaniciCevap=document.querySelector('input[name="yeniSecenek"]:checked').value;
     
     console.log(kullaniciCevap);
-
-    if(kullaniciCevap===dogruCevap){
-      alert("Tebrikler. Doğru cevap.");
-      
-    }
-    else{
-      alert("Yanlış cevap!!!");
-    }
-
     
-  }
+      if(kullaniciCevap===dogruCevap){
+        document.getElementById("cvp").innerHTML = "Tebrikler,Doğru Cevap!!!"; 
+        const foto = document.getElementById(secilensoru);
+        foto.style.border = "2px solid green"; 
+        
+      } else {
+        document.getElementById("cvp").innerHTML = "Yanlış Cevap!!!";
+        const foto = document.getElementById(secilensoru);
+        foto.style.border = "2px solid red"; 
+        document.getElementById("resim").innerHTML = "<img src='img/kerimcan.jpg'> "; 
+        document.getElementById("acklama").innerHTML = "Futbol Bilgin!";
+      } 
+
+      }
+      
+    
+
+  
+    
+  
